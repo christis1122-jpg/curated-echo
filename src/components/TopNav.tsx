@@ -1,13 +1,11 @@
-import { Flame, Bell } from "lucide-react";
+import { Flame, Bell, Sparkles } from "lucide-react";
 
 const TopNav = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="flex items-center justify-between px-5 py-3 max-w-2xl mx-auto">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-serif text-sm font-semibold">
-            R
-          </div>
+        <div className="flex items-center gap-2">
+          <Sparkles size={20} className="text-primary" />
           <h1 className="font-serif text-lg font-semibold tracking-tight text-foreground">
             The Polymath
           </h1>
