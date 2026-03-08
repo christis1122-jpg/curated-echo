@@ -9,6 +9,7 @@ import LibraryPage from "./pages/Library";
 import NoteDetail from "./pages/NoteDetail";
 import Discussion from "./pages/Discussion";
 import Analytics from "./pages/Analytics";
+import Explore from "./pages/Explore";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/read/:id" element={<Reader />} />
+          <Route path="/explore" element={<Explore />} />
           <Route path="/library" element={<LibraryPage />} />
           <Route path="/note/:id" element={<NoteDetail />} />
           <Route path="/discuss/:id" element={<Discussion />} />
