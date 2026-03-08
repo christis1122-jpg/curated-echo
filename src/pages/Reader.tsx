@@ -291,6 +291,8 @@ const Reader = () => {
         onFontSizeChange={setFontSize}
         onLineHeightChange={setLineHeight}
         onThemeChange={setTheme}
+        onTakeNote={() => setNoteModal(true)}
+        onJoinDiscussion={() => toast("Discussion coming soon!")}
       />
     </div>
   );

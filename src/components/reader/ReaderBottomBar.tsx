@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Type, Sun, Moon, Volume2, Minus, Plus } from "lucide-react";
+import { Type, Sun, Moon, Volume2, Minus, Plus, PenLine, MessagesSquare } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ReaderBottomBarProps {
@@ -9,6 +9,8 @@ interface ReaderBottomBarProps {
   onFontSizeChange: (size: number) => void;
   onLineHeightChange: (lh: number) => void;
   onThemeChange: (theme: "light" | "sepia" | "dark") => void;
+  onTakeNote: () => void;
+  onJoinDiscussion: () => void;
 }
 
 const themeOptions: { value: "light" | "sepia" | "dark"; label: string; icon: React.ReactNode; bg: string }[] = [
@@ -20,6 +22,7 @@ const themeOptions: { value: "light" | "sepia" | "dark"; label: string; icon: Re
 const ReaderBottomBar = ({
   fontSize, lineHeight, theme,
   onFontSizeChange, onLineHeightChange, onThemeChange,
+  onTakeNote, onJoinDiscussion,
 }: ReaderBottomBarProps) => {
   const [showSettings, setShowSettings] = useState(false);
 
@@ -31,7 +34,7 @@ const ReaderBottomBar = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-16 left-0 right-0 z-50 px-4"
+            className="fixed bottom-20 left-0 right-0 z-50 px-4"
           >
             <div className="max-w-md mx-auto bg-card border border-border rounded-xl p-4 shadow-lg space-y-4">
               {/* Font Size */}
@@ -97,24 +100,41 @@ const ReaderBottomBar = ({
         )}
       </AnimatePresence>
 
-      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-t border-border">
-        <div className="flex items-center justify-around max-w-md mx-auto py-2.5 px-4">
+      {/* Floating action buttons */}
+      <div className="fixed bottom-6 left-0 right-0 z-50 px-4">
+        <div className="max-w-md mx-auto flex items-center justify-center gap-3">
           <button
-            onClick={() => setShowSettings(!showSettings)}
-            className={`flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-lg transition-colors ${
-              showSettings ? "text-primary" : "text-muted-foreground hover:text-foreground"
-            }`}
+            onClick={onTakeNote}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg hover:shadow-xl hover:border-primary/40 transition-all text-foreground"
           >
-            <Type size={20} />
-            <span className="text-[10px] font-medium">Font</span>
+            <PenLine size={18} />
+            <span className="text-xs font-medium">Note</span>
           </button>
 
-          <button className="flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors">
-            <Volume2 size={20} />
-            <span className="text-[10px] font-medium">Listen</span>
+          <button
+            onClick={onJoinDiscussion}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg hover:shadow-xl hover:border-primary/40 transition-all text-foreground"
+          >
+            <MessagesSquare size={18} />
+            <span className="text-xs font-medium">Discuss</span>
+          </button>
+
+          <button
+            onClick={() => setShowSettings(!showSettings)}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-full border shadow-lg hover:shadow-xl transition-all ${
+              showSettings ? "bg-primary text-primary-foreground border-primary" : "bg-card border-border hover:border-primary/40 text-foreground"
+            }`}
+          >
+            <Type size={18} />
+            <span className="text-xs font-medium">Font</span>
+          </button>
+
+          <button className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg hover:shadow-xl hover:border-primary/40 transition-all text-foreground">
+            <Volume2 size={18} />
+            <span className="text-xs font-medium">Listen</span>
           </button>
         </div>
-      </nav>
+      </div>
     </>
   );
 };
