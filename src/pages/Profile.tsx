@@ -57,9 +57,7 @@ const Profile = () => {
             <ArrowLeft size={20} className="text-foreground" />
           </button>
           <h1 className="text-base font-semibold font-serif text-foreground">Profile</h1>
-          <button onClick={() => toast("Edit profile coming soon")} className="p-1.5 rounded-lg hover:bg-muted transition-colors">
-            <Edit3 size={18} className="text-muted-foreground" />
-          </button>
+          <div className="w-8" />
         </div>
       </div>
 
@@ -73,13 +71,12 @@ const Profile = () => {
             {p.avatar}
           </div>
           <h2 className="text-xl font-serif font-bold text-foreground">{p.displayName}</h2>
-          <button
-            onClick={() => toast("Retake archetype assessment")}
+          <div
             className="mt-1 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
             style={{ backgroundColor: `${p.archetypeColor}20`, color: p.archetypeColor }}
           >
             <Sparkles size={10} /> {p.archetype}
-          </button>
+          </div>
           <p className="text-sm text-muted-foreground mt-2 max-w-xs">{p.bio}</p>
           <div className="flex items-center gap-1 mt-2 text-xs text-muted-foreground">
             <Calendar size={12} /> Joined {p.joinDate}
@@ -113,7 +110,7 @@ const Profile = () => {
         <motion.div {...section(0.05)} className="bg-card rounded-xl border border-border p-4">
           <div className="flex items-center justify-between mb-1">
             <h3 className="text-sm font-semibold text-foreground">My Archetype</h3>
-            <button onClick={() => toast("Retake assessment")} className="text-xs text-primary font-medium">Retake</button>
+            
           </div>
           <p className="text-xs text-muted-foreground mb-3">{p.archetypeDescription}</p>
           <ResponsiveContainer width="100%" height={220}>
