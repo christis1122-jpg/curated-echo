@@ -34,7 +34,7 @@ const ReaderBottomBar = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-16 left-0 right-0 z-50 px-4"
+            className="fixed bottom-20 left-0 right-0 z-50 px-4"
           >
             <div className="max-w-md mx-auto bg-card border border-border rounded-xl p-4 shadow-lg space-y-4">
               {/* Font Size */}
