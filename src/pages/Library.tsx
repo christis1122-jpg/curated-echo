@@ -2,18 +2,19 @@ import { useState, useMemo } from "react";
 import { AnimatePresence } from "framer-motion";
 import { ArrowLeft, FolderOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { MOCK_NOTES, MOCK_THREADS, COLLECTIONS } from "@/data/library";
+import { MOCK_NOTES, MOCK_THREADS, MOCK_ARCHIVED_READS, COLLECTIONS } from "@/data/library";
 import ViewToggle from "@/components/library/ViewToggle";
 import LibrarySearch from "@/components/library/LibrarySearch";
 import NoteCard from "@/components/library/NoteCard";
 import ThreadCard from "@/components/library/ThreadCard";
+import ArchivedReadCard from "@/components/library/ArchivedReadCard";
 import BottomNav from "@/components/BottomNav";
 
-type LibraryView = "notes" | "highlights" | "threads";
+type LibraryView = "reads" | "notes" | "highlights" | "threads";
 
 const LibraryPage = () => {
   const navigate = useNavigate();
-  const [view, setView] = useState<LibraryView>("notes");
+  const [view, setView] = useState<LibraryView>("reads");
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [activeCollection, setActiveCollection] = useState<string | null>(null);
@@ -45,6 +46,18 @@ const LibraryPage = () => {
     return result;
   }, [notes, query, activeTag, activeCollection]);
 
+  // Filter archived reads
+  const filteredReads = useMemo(() => {
+    if (!query) return MOCK_ARCHIVED_READS;
+    const q = query.toLowerCase();
+    return MOCK_ARCHIVED_READS.filter(
+      (r) =>
+        r.title.toLowerCase().includes(q) ||
+        r.author.toLowerCase().includes(q) ||
+        r.domain.toLowerCase().includes(q)
+    );
+  }, [query]);
+
   // Group highlights by color
   const highlightsByColor = useMemo(() => {
     const colored = filteredNotes.filter((n) => n.highlightColor);
@@ -56,6 +69,7 @@ const LibraryPage = () => {
   }, [filteredNotes]);
 
   const counts = {
+    reads: filteredReads.length,
     notes: filteredNotes.length,
     highlights: filteredNotes.filter((n) => n.highlightColor).length,
     threads: MOCK_THREADS.length,
@@ -70,7 +84,7 @@ const LibraryPage = () => {
             <ArrowLeft size={20} />
           </button>
           <h1 className="font-serif text-xl font-semibold text-foreground flex-1">Library</h1>
-          <span className="text-xs text-muted-foreground font-medium">{notes.length} notes</span>
+          <span className="text-xs text-muted-foreground font-medium">{notes.length} notes · {MOCK_ARCHIVED_READS.length} reads</span>
         </div>
       </header>
 
@@ -81,29 +95,52 @@ const LibraryPage = () => {
         {/* Search */}
         <LibrarySearch query={query} onQueryChange={setQuery} activeTag={activeTag} onTagChange={setActiveTag} />
 
-        {/* Collections */}
-        <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
-          <button
-            onClick={() => setActiveCollection(null)}
-            className={`filter-pill shrink-0 ${!activeCollection ? "filter-pill-active" : "filter-pill-inactive"}`}
-          >
-            All
-          </button>
-          {COLLECTIONS.map((col) => (
+        {/* Collections (show for notes/highlights) */}
+        {(view === "notes" || view === "highlights") && (
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
             <button
-              key={col}
-              onClick={() => setActiveCollection(activeCollection === col ? null : col)}
-              className={`filter-pill shrink-0 inline-flex items-center gap-1.5 ${
-                activeCollection === col ? "filter-pill-active" : "filter-pill-inactive"
-              }`}
+              onClick={() => setActiveCollection(null)}
+              className={`filter-pill shrink-0 ${!activeCollection ? "filter-pill-active" : "filter-pill-inactive"}`}
             >
-              <FolderOpen size={12} />
-              {col}
+              All
             </button>
-          ))}
-        </div>
+            {COLLECTIONS.map((col) => (
+              <button
+                key={col}
+                onClick={() => setActiveCollection(activeCollection === col ? null : col)}
+                className={`filter-pill shrink-0 inline-flex items-center gap-1.5 ${
+                  activeCollection === col ? "filter-pill-active" : "filter-pill-inactive"
+                }`}
+              >
+                <FolderOpen size={12} />
+                {col}
+              </button>
+            ))}
+          </div>
+        )}
 
-        {/* Content */}
+        {/* Archived Reads */}
+        {view === "reads" && (
+          <div className="space-y-3">
+            {/* Completion summary */}
+            <div className="flex items-center gap-4 text-xs text-muted-foreground">
+              <span>{filteredReads.filter((r) => r.progress === 100).length} completed</span>
+              <span>{filteredReads.filter((r) => r.progress < 100).length} in progress</span>
+            </div>
+            <AnimatePresence mode="popLayout">
+              {filteredReads.map((read, i) => (
+                <ArchivedReadCard key={read.id} read={read} index={i} />
+              ))}
+            </AnimatePresence>
+            {filteredReads.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-sm text-muted-foreground">No archived reads match your search.</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Notes */}
         {view === "notes" && (
           <div className="space-y-3">
             <AnimatePresence mode="popLayout">
