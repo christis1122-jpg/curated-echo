@@ -8,14 +8,9 @@ const TopNav = () => {
           <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-serif text-sm font-semibold">
             R
           </div>
-          <div>
-            <h1 className="font-serif text-base font-semibold leading-tight text-foreground">
-              The Polymath
-            </h1>
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-sans font-medium">
-              Archetype
-            </p>
-          </div>
+          <h1 className="font-serif text-lg font-semibold tracking-tight text-foreground">
+            The Polymath
+          </h1>
         </div>
 
         <div className="flex items-center gap-4">
