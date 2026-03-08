@@ -11,6 +11,8 @@ import Discussion from "./pages/Discussion";
 import Analytics from "./pages/Analytics";
 import Explore from "./pages/Explore";
 import Profile from "./pages/Profile";
+import Assessment from "./pages/Assessment";
+import ArchetypeReveal from "./pages/ArchetypeReveal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/discuss/:id" element={<Discussion />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/assessment" element={<Assessment />} />
+          <Route path="/archetype-reveal" element={<ArchetypeReveal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
