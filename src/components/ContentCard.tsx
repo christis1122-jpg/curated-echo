@@ -1,5 +1,6 @@
 import { Star, Clock, BookOpen, Eye, Highlighter, Lock, DollarSign } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import type { Article } from "@/data/articles";
 
 const typeTagClass: Record<string, string> = {
@@ -29,6 +30,12 @@ interface ContentCardProps {
 }
 
 const ContentCard = ({ article, index, onSave, onDismiss }: ContentCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/read/${article.id}`);
+  };
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -39,10 +46,11 @@ const ContentCard = ({ article, index, onSave, onDismiss }: ContentCardProps) =>
       dragElastic={0.3}
       onDragEnd={(_, info) => {
         if (info.offset.x > 100) onSave(article.id);
-        if (info.offset.x < -100) onDismiss(article.id);
+        else if (info.offset.x < -100) onDismiss(article.id);
       }}
+      onClick={handleClick}
       whileHover={{ y: -2 }}
-      className="bg-card rounded-xl border border-border p-5 cursor-grab active:cursor-grabbing transition-shadow hover:shadow-md"
+      className="bg-card rounded-xl border border-border p-5 cursor-pointer transition-shadow hover:shadow-md"
     >
       {/* Tags Row */}
       <div className="flex items-center gap-2 mb-3">
