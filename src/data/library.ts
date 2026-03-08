@@ -143,6 +143,94 @@ export const MOCK_THREADS: InsightThread[] = [
   },
 ];
 
+export interface ArchivedRead {
+  id: string;
+  articleId: string;
+  title: string;
+  author: string;
+  domain: string;
+  type: "Essay" | "Article" | "Research" | "Op-Ed";
+  readTime: string;
+  wordCount: string;
+  completedAt: string;
+  progress: number; // 0-100
+  notesCount: number;
+  highlightsCount: number;
+}
+
+export const MOCK_ARCHIVED_READS: ArchivedRead[] = [
+  {
+    id: "ar1",
+    articleId: "1",
+    title: "The Quiet Architecture of Self-Deception",
+    author: "Elena Voss",
+    domain: "Psychology",
+    type: "Essay",
+    readTime: "12 min",
+    wordCount: "3,200",
+    completedAt: "2 hours ago",
+    progress: 100,
+    notesCount: 2,
+    highlightsCount: 3,
+  },
+  {
+    id: "ar2",
+    articleId: "2",
+    title: "Mapping the Default Mode Network in Creative States",
+    author: "Dr. James Chen",
+    domain: "Neuroscience",
+    type: "Research",
+    readTime: "22 min",
+    wordCount: "6,800",
+    completedAt: "Yesterday",
+    progress: 100,
+    notesCount: 1,
+    highlightsCount: 2,
+  },
+  {
+    id: "ar3",
+    articleId: "4",
+    title: "The Unintended Consequences of Attention Engineering",
+    author: "Sarah Kim",
+    domain: "Technology",
+    type: "Article",
+    readTime: "15 min",
+    wordCount: "4,500",
+    completedAt: "3 days ago",
+    progress: 100,
+    notesCount: 2,
+    highlightsCount: 4,
+  },
+  {
+    id: "ar4",
+    articleId: "3",
+    title: "Why We Should Abandon the Trolley Problem",
+    author: "Marcus Webb",
+    domain: "Philosophy",
+    type: "Op-Ed",
+    readTime: "8 min",
+    wordCount: "2,100",
+    completedAt: "5 days ago",
+    progress: 72,
+    notesCount: 1,
+    highlightsCount: 1,
+  },
+  {
+    id: "ar5",
+    articleId: "7",
+    title: "The Myth of Digital Minimalism",
+    author: "Priya Sharma",
+    domain: "Culture",
+    type: "Op-Ed",
+    readTime: "7 min",
+    wordCount: "1,900",
+    completedAt: "1 week ago",
+    progress: 45,
+    notesCount: 0,
+    highlightsCount: 0,
+  },
+];
+
 export const COLLECTIONS = ["Mind & Self", "Creative Process", "Tech & Mind", "Ethics & Society"];
 
 export const ALL_TAGS = [
