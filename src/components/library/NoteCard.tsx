@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Star, MoreHorizontal, Clock, Tag } from "lucide-react";
 import type { LibraryNote } from "@/data/library";
 
@@ -21,12 +22,15 @@ interface NoteCardProps {
 }
 
 const NoteCard = ({ note, index, onToggleStar }: NoteCardProps) => {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
-      className="bg-card border border-border rounded-xl p-4 space-y-3"
+      onClick={() => navigate(`/note/${note.id}`)}
+      className="bg-card border border-border rounded-xl p-4 space-y-3 cursor-pointer hover:shadow-md transition-shadow"
     >
       {/* Source */}
       <div className="flex items-start justify-between gap-2">
