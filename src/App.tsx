@@ -8,6 +8,7 @@ import Reader from "./pages/Reader";
 import LibraryPage from "./pages/Library";
 import NoteDetail from "./pages/NoteDetail";
 import Discussion from "./pages/Discussion";
+import Analytics from "./pages/Analytics";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/library" element={<LibraryPage />} />
           <Route path="/note/:id" element={<NoteDetail />} />
           <Route path="/discuss/:id" element={<Discussion />} />
+          <Route path="/analytics" element={<Analytics />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
