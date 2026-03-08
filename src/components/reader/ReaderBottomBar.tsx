@@ -101,37 +101,37 @@ const ReaderBottomBar = ({
       </AnimatePresence>
 
       {/* Floating action buttons */}
-      <div className="fixed bottom-6 left-0 right-0 z-50 px-4">
-        <div className="max-w-md mx-auto flex items-center justify-center gap-3">
+      <div className="fixed bottom-5 left-0 right-0 z-50 flex justify-center">
+        <div className="flex items-center gap-1.5 bg-card/80 backdrop-blur-xl border border-border rounded-full px-1.5 py-1.5 shadow-lg">
           <button
             onClick={onTakeNote}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg hover:shadow-xl hover:border-primary/40 transition-all text-foreground"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-secondary transition-colors text-foreground"
           >
-            <PenLine size={18} />
-            <span className="text-xs font-medium">Note</span>
+            <PenLine size={15} />
+            <span className="text-[11px] font-medium">Note</span>
           </button>
 
           <button
             onClick={onJoinDiscussion}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg hover:shadow-xl hover:border-primary/40 transition-all text-foreground"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-secondary transition-colors text-foreground"
           >
-            <MessagesSquare size={18} />
-            <span className="text-xs font-medium">Discuss</span>
+            <MessagesSquare size={15} />
+            <span className="text-[11px] font-medium">Discuss</span>
           </button>
 
           <button
             onClick={() => setShowSettings(!showSettings)}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-full border shadow-lg hover:shadow-xl transition-all ${
-              showSettings ? "bg-primary text-primary-foreground border-primary" : "bg-card border-border hover:border-primary/40 text-foreground"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-colors ${
+              showSettings ? "bg-primary text-primary-foreground" : "hover:bg-secondary text-foreground"
             }`}
           >
-            <Type size={18} />
-            <span className="text-xs font-medium">Font</span>
+            <Type size={15} />
+            <span className="text-[11px] font-medium">Font</span>
           </button>
 
-          <button className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border shadow-lg hover:shadow-xl hover:border-primary/40 transition-all text-foreground">
-            <Volume2 size={18} />
-            <span className="text-xs font-medium">Listen</span>
+          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-secondary transition-colors text-foreground">
+            <Volume2 size={15} />
+            <span className="text-[11px] font-medium">Listen</span>
           </button>
         </div>
       </div>
