@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Reader from "./pages/Reader";
 import LibraryPage from "./pages/Library";
 import NoteDetail from "./pages/NoteDetail";
+import Discussion from "./pages/Discussion";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/read/:id" element={<Reader />} />
           <Route path="/library" element={<LibraryPage />} />
           <Route path="/note/:id" element={<NoteDetail />} />
+          <Route path="/discuss/:id" element={<Discussion />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

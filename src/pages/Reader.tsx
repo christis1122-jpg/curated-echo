@@ -292,7 +292,7 @@ const Reader = () => {
         onLineHeightChange={setLineHeight}
         onThemeChange={setTheme}
         onTakeNote={() => setNoteModal(true)}
-        onJoinDiscussion={() => toast("Discussion coming soon!")}
+        onJoinDiscussion={() => navigate(`/discuss/${id}`)}
       />
     </div>
   );
