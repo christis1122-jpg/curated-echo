@@ -110,12 +110,14 @@ const Explore = () => {
             <button className="text-xs text-primary font-medium">See all</button>
           </div>
           <div className="flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-5 px-5">
-            {FEATURED_COLLECTIONS.map((c, i) => (
+             {FEATURED_COLLECTIONS.map((c, i) => (
               <motion.div
                 key={c.id}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.08 }}
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
                 className={`shrink-0 w-[280px] snap-start rounded-2xl p-5 bg-gradient-to-br ${c.gradient} relative overflow-hidden cursor-pointer group`}
                 onClick={() => toast(`Opening "${c.title}"...`)}
               >
@@ -125,7 +127,11 @@ const Explore = () => {
                 <div className="flex items-center gap-1 mt-3 text-xs text-primary-foreground/60">
                   <BookOpen size={12} /> {c.articleCount} articles
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-primary-foreground/5 group-hover:scale-125 transition-transform duration-500" />
+                <motion.div
+                  className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-primary-foreground/5"
+                  whileHover={{ scale: 1.5 }}
+                  transition={{ duration: 0.5 }}
+                />
               </motion.div>
             ))}
           </div>
@@ -137,18 +143,24 @@ const Explore = () => {
             <h2 className="text-sm font-semibold text-foreground">Browse by Domain</h2>
           </div>
           <div className="flex gap-2.5 overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-5 px-5 pb-1">
-            {CATEGORIES.map((cat, i) => (
+           {CATEGORIES.map((cat, i) => (
               <motion.button
                 key={cat.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.03 }}
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.9 }}
                 className="shrink-0 snap-start flex flex-col items-center gap-1.5 w-[72px] group"
                 onClick={() => toast(`Browsing ${cat.name}`)}
               >
-                <div className="w-14 h-14 rounded-2xl bg-muted border border-border flex items-center justify-center text-2xl group-hover:border-primary/40 group-hover:bg-accent transition-all">
+                <motion.div
+                  className="w-14 h-14 rounded-2xl bg-muted border border-border flex items-center justify-center text-2xl group-hover:border-primary/40 group-hover:bg-accent transition-all"
+                  whileHover={{ rotate: [0, -5, 5, 0] }}
+                  transition={{ duration: 0.4 }}
+                >
                   {cat.emoji}
-                </div>
+                </motion.div>
                 <span className="text-[10px] font-medium text-muted-foreground group-hover:text-foreground transition-colors truncate w-full text-center">{cat.name}</span>
               </motion.button>
             ))}
@@ -248,8 +260,9 @@ const Explore = () => {
                     <span className="flex items-center gap-0.5"><Users size={9} /> {voice.followers > 999 ? `${(voice.followers / 1000).toFixed(1)}K` : voice.followers}</span>
                     <span className="flex items-center gap-0.5"><BookOpen size={9} /> {voice.articles}</span>
                   </div>
-                  <button
+                  <motion.button
                     onClick={() => toggleFollowVoice(voice.id)}
+                    whileTap={{ scale: 0.92 }}
                     className={`mt-3 w-full py-1.5 rounded-lg text-xs font-semibold transition-all ${
                       isFollowed
                         ? "bg-muted text-muted-foreground border border-border"
@@ -257,7 +270,7 @@ const Explore = () => {
                     }`}
                   >
                     {isFollowed ? "Following" : "Follow"}
-                  </button>
+                  </motion.button>
                 </motion.div>
               );
             })}

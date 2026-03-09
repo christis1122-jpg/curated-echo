@@ -129,9 +129,12 @@ const Profile = () => {
             {INTEREST_TAGS.map((tag) => {
               const active = selectedInterests.has(tag);
               return (
-                <button
+                <motion.button
                   key={tag}
                   onClick={() => toggleInterest(tag)}
+                  whileTap={{ scale: 0.9 }}
+                  animate={active ? { scale: [1, 1.08, 1] } : {}}
+                  transition={{ duration: 0.2 }}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
                     active
                       ? "bg-primary/10 text-primary border-primary/30"
@@ -139,7 +142,7 @@ const Profile = () => {
                   }`}
                 >
                   {tag}
-                </button>
+                </motion.button>
               );
             })}
           </div>
