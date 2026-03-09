@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FILTERS } from "@/data/articles";
 
 interface FilterPillsProps {
@@ -16,15 +17,23 @@ const FilterPills = ({ activeFilter, onFilterChange }: FilterPillsProps) => {
         className="flex gap-2 px-5 py-3 overflow-x-auto scrollbar-hide max-w-2xl mx-auto"
       >
         {FILTERS.map((filter) => (
-          <button
+          <motion.button
             key={filter}
             onClick={() => onFilterChange(filter)}
-            className={`filter-pill ${
+            whileTap={{ scale: 0.92 }}
+            className={`relative filter-pill ${
               activeFilter === filter ? "filter-pill-active" : "filter-pill-inactive"
             }`}
           >
             {filter}
-          </button>
+            {activeFilter === filter && (
+              <motion.div
+                layoutId="filterPillIndicator"
+                className="absolute inset-0 rounded-full bg-primary/10 border border-primary/20"
+                transition={{ type: "spring", stiffness: 400, damping: 28 }}
+              />
+            )}
+          </motion.button>
         ))}
       </div>
     </div>
