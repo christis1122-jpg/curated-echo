@@ -162,8 +162,8 @@ export interface ArchivedRead {
 
 export const MOCK_ARCHIVED_READS: ArchivedRead[] = [
   {
-    id: "ar1",
-    articleId: "1",
+    id: ARCHIVED_READ_IDS.ar1,
+    articleId: ARTICLE_IDS["1"],
     title: "The Quiet Architecture of Self-Deception",
     author: "Elena Voss",
     domain: "Psychology",
