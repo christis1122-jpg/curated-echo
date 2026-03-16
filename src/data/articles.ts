@@ -195,7 +195,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Comfort reading has its place but shouldn't be confused with growth",
     ],
   },
-  "6": {
+  [ARTICLE_IDS["6"]]: {
     content: RESEARCH_CONTENT,
     keyIdeas: [
       "Three Nordic cities are piloting degrowth-aligned economies",
