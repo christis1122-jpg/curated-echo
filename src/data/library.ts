@@ -81,7 +81,7 @@ export const MOCK_NOTES: LibraryNote[] = [
     sessionContext: "Lunch break · 8 min session",
   },
   {
-    id: "n5",
+    id: NOTE_IDS.n5,
     articleTitle: "The Unintended Consequences of Attention Engineering",
     articleAuthor: "Sarah Kim",
     articleDomain: "Technology",
