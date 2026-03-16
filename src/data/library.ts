@@ -115,10 +115,10 @@ export const MOCK_THREADS: InsightThread[] = [
     id: THREAD_IDS.t1,
     title: "The Self as Constructed Narrative",
     summary: "Your notes reveal a recurring theme: identity isn't discovered but built through selective attention, self-deception, and the stories we tell ourselves. Elena Voss's essay on self-deception connects directly to Sarah Kim's argument that attention shapes who we become.",
-    noteIds: ["n1", "n2", "n6"],
+    noteIds: [NOTE_IDS.n1, NOTE_IDS.n2, NOTE_IDS.n6],
     connections: [
-      { from: "n1", to: "n6", label: "Self-deception ↔ Attention as identity" },
-      { from: "n2", to: "n1", label: "Depressive realism ↔ Adaptive deception" },
+      { from: NOTE_IDS.n1, to: NOTE_IDS.n6, label: "Self-deception ↔ Attention as identity" },
+      { from: NOTE_IDS.n2, to: NOTE_IDS.n1, label: "Depressive realism ↔ Adaptive deception" },
     ],
     createdAt: "1 hour ago",
   },
