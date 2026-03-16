@@ -132,7 +132,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: true,
     icon: "alert-triangle",
     actionLabel: "Quick Read",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
   },
   // Reading reminder
   {
