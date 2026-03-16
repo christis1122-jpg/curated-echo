@@ -1,3 +1,5 @@
+import { ARTICLE_IDS, NOTIFICATION_IDS } from "@/data/gyst-ids";
+
 export type NotificationType =
   | "reading_reminder"
   | "new_content"
