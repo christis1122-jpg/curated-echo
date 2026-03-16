@@ -182,7 +182,7 @@ export const SMART_PROMPTS: SmartPrompt[] = [
     subtext: "New essay matches your interests in neuroscience and decision-making.",
     icon: "sparkles",
     actionLabel: "Read Essay",
-    actionRoute: "/reader/2",
+    actionRoute: `/read/${ARTICLE_IDS["2"]}`,
     gradient: ["hsl(160 60% 40%)", "hsl(210 70% 50%)"],
   },
 ];
