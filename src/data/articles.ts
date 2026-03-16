@@ -169,7 +169,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Flow states exhibit a ~15-20 second neural cycle pattern",
     ],
   },
-  "3": {
+  [ARTICLE_IDS["3"]]: {
     content: OPED_CONTENT,
     keyIdeas: [
       "The trolley problem trains us to ignore context — the opposite of good moral reasoning",
