@@ -147,7 +147,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     actionRoute: `/read/${ARTICLE_IDS["1"]}`,
   },
   {
-    id: "n10",
+    id: NOTIFICATION_IDS.n10,
     type: "achievement",
     title: "🎯 7-Day Streak earned!",
     description: "Consistent reading is the foundation of deep thinking. Badge added to your profile.",
