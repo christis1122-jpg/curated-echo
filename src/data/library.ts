@@ -40,7 +40,7 @@ export const MOCK_NOTES: LibraryNote[] = [
     sessionContext: "Morning read · 12 min session",
   },
   {
-    id: "n2",
+    id: NOTE_IDS.n2,
     articleTitle: "The Quiet Architecture of Self-Deception",
     articleAuthor: "Elena Voss",
     articleDomain: "Psychology",
