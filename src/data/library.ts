@@ -123,12 +123,12 @@ export const MOCK_THREADS: InsightThread[] = [
     createdAt: "1 hour ago",
   },
   {
-    id: "t2",
+    id: THREAD_IDS.t2,
     title: "Creativity Requires Cognitive Flexibility",
     summary: "The DMN-ECN coupling in creative states mirrors the broader theme across your reading: the best thinking doesn't suppress any mode but switches fluidly between them. This connects to questions about whether moral reasoning needs both abstract and embodied thinking.",
-    noteIds: ["n3", "n4"],
+    noteIds: [NOTE_IDS.n3, NOTE_IDS.n4],
     connections: [
-      { from: "n3", to: "n4", label: "Cognitive switching ↔ Ethical reasoning modes" },
+      { from: NOTE_IDS.n3, to: NOTE_IDS.n4, label: "Cognitive switching ↔ Ethical reasoning modes" },
     ],
     createdAt: "Yesterday",
   },
