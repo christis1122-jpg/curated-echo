@@ -176,8 +176,8 @@ export const MOCK_ARCHIVED_READS: ArchivedRead[] = [
     highlightsCount: 3,
   },
   {
-    id: "ar2",
-    articleId: "2",
+    id: ARCHIVED_READ_IDS.ar2,
+    articleId: ARTICLE_IDS["2"],
     title: "Mapping the Default Mode Network in Creative States",
     author: "Dr. James Chen",
     domain: "Neuroscience",
