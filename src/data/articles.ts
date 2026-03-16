@@ -160,7 +160,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Meta-awareness of our own deceptions may be the path to honest growth",
     ],
   },
-  "2": {
+  [ARTICLE_IDS["2"]]: {
     content: RESEARCH_CONTENT,
     keyIdeas: [
       "Creative flow involves rapid cycling between the default mode and executive networks",
