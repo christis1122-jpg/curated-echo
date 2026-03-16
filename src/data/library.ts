@@ -112,7 +112,7 @@ export const MOCK_NOTES: LibraryNote[] = [
 
 export const MOCK_THREADS: InsightThread[] = [
   {
-    id: "t1",
+    id: THREAD_IDS.t1,
     title: "The Self as Constructed Narrative",
     summary: "Your notes reveal a recurring theme: identity isn't discovered but built through selective attention, self-deception, and the stories we tell ourselves. Elena Voss's essay on self-deception connects directly to Sarah Kim's argument that attention shapes who we become.",
     noteIds: ["n1", "n2", "n6"],
