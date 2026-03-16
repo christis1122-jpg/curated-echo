@@ -136,7 +136,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // Reading reminder
   {
-    id: "n9",
+    id: NOTIFICATION_IDS.n9,
     type: "reading_reminder",
     title: "Continue where you left off",
     description: '"The Paradox of Choice" — you were 68% through. Pick it back up?',
