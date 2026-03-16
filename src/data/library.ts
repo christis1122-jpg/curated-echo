@@ -68,7 +68,7 @@ export const MOCK_NOTES: LibraryNote[] = [
     sessionContext: "Evening deep read · 22 min session",
   },
   {
-    id: "n4",
+    id: NOTE_IDS.n4,
     articleTitle: "Why We Should Abandon the Trolley Problem",
     articleAuthor: "Marcus Webb",
     articleDomain: "Philosophy",
