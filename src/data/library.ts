@@ -54,7 +54,7 @@ export const MOCK_NOTES: LibraryNote[] = [
     sessionContext: "Morning read · 12 min session",
   },
   {
-    id: "n3",
+    id: NOTE_IDS.n3,
     articleTitle: "Mapping the Default Mode Network in Creative States",
     articleAuthor: "Dr. James Chen",
     articleDomain: "Neuroscience",
