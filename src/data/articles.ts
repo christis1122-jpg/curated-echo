@@ -248,7 +248,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "8.9k", highlights: "2.1k",
   },
   {
-    id: "4",
+    id: ARTICLE_IDS["4"],
     type: "Article",
     domain: "Technology",
     title: "The Unintended Consequences of Attention Engineering",
