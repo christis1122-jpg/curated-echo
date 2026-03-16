@@ -226,7 +226,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "2.3k", highlights: "847",
   },
   {
-    id: "2",
+    id: ARTICLE_IDS["2"],
     type: "Research",
     domain: "Neuroscience",
     title: "Mapping the Default Mode Network in Creative States",
