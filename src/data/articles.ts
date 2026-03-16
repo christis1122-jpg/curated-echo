@@ -237,7 +237,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "5.1k", highlights: "1.2k",
   },
   {
-    id: "3",
+    id: ARTICLE_IDS["3"],
     type: "Op-Ed",
     domain: "Philosophy",
     title: "Why We Should Abandon the Trolley Problem",
