@@ -270,7 +270,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "1.8k", highlights: "623",
   },
   {
-    id: "6",
+    id: ARTICLE_IDS["6"],
     type: "Research",
     domain: "Economics",
     title: "Post-Growth Economies: Evidence from Nordic Experiments",
