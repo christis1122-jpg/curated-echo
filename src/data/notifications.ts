@@ -68,7 +68,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // Achievement
   {
-    id: "n3",
+    id: NOTIFICATION_IDS.n3,
     type: "achievement",
     title: "🏆 Achievement Unlocked: Polymath Explorer",
     description: "You've read across 6 different domains this month. Impressive breadth!",
