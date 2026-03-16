@@ -59,7 +59,7 @@ const USERS: Record<string, DiscussionUser> = {
 };
 
 export const MOCK_DISCUSSIONS: Record<string, DiscussionThread[]> = {
-  "1": [
+  [ARTICLE_IDS["1"]]: [
     {
       id: "d1", tab: "debate", user: USERS.maya,
       content: "I think the essay undersells the **social dimension** of self-deception. We don't just deceive ourselves in isolation — our self-deceptions are co-constructed with the people around us. Families, organizations, and entire cultures maintain shared fictions.",
