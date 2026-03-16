@@ -89,7 +89,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     actionRoute: `/read/${ARTICLE_IDS["2"]}`,
   },
   {
-    id: "n5",
+    id: NOTIFICATION_IDS.n5,
     type: "new_content",
     title: "Trending in Philosophy",
     description: '"Beyond Rationality" by Marcus Webb is gaining traction among Synthesizers.',
