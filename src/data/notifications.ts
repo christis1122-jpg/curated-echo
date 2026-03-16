@@ -164,7 +164,7 @@ export const SMART_PROMPTS: SmartPrompt[] = [
     subtext: '"Why We Sleep Badly" by Dr. A. Walker • 4 min read',
     icon: "zap",
     actionLabel: "Start Reading",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
     gradient: ["hsl(24 80% 52%)", "hsl(45 95% 55%)"],
   },
   {
