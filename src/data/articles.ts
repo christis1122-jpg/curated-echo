@@ -148,8 +148,10 @@ More radical approaches include "time well spent" design principles that optimiz
 
 The stakes are higher than most people realize. Attention is the fundamental resource of conscious experience. How we allocate it determines what we perceive, what we think, what we feel, and ultimately, who we become. The engineering of attention is, in a very real sense, the engineering of human experience itself.`;
 
+import { ARTICLE_IDS } from "@/data/gyst-ids";
+
 export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: string[] }> = {
-  "1": {
+  [ARTICLE_IDS["1"]]: {
     content: ESSAY_CONTENT,
     keyIdeas: [
       "Self-deception evolved as an adaptive mechanism, not a cognitive flaw",
