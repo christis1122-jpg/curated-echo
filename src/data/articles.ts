@@ -178,7 +178,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Moral philosophy should begin with perception, not impossible hypotheticals",
     ],
   },
-  "4": {
+  [ARTICLE_IDS["4"]]: {
     content: ARTICLE_CONTENT,
     keyIdeas: [
       "Attention engineering exploits dopamine pathways evolved for survival",
