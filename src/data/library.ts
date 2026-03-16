@@ -190,8 +190,8 @@ export const MOCK_ARCHIVED_READS: ArchivedRead[] = [
     highlightsCount: 2,
   },
   {
-    id: "ar3",
-    articleId: "4",
+    id: ARCHIVED_READ_IDS.ar3,
+    articleId: ARTICLE_IDS["4"],
     title: "The Unintended Consequences of Attention Engineering",
     author: "Sarah Kim",
     domain: "Technology",
