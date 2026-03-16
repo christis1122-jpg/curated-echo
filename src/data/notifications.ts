@@ -78,7 +78,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // New content
   {
-    id: "n4",
+    id: NOTIFICATION_IDS.n4,
     type: "new_content",
     title: "New from Dr. Sarah Chen",
     description: '"The Neuroscience of Decision Fatigue" — matches your cognitive science interests.',
