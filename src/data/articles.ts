@@ -203,7 +203,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Community-scale experiments show scalable results",
     ],
   },
-  "7": {
+  [ARTICLE_IDS["7"]]: {
     content: OPED_CONTENT,
     keyIdeas: [
       "Digital minimalism addresses symptoms, not causes",
