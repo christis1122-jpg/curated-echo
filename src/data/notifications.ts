@@ -101,7 +101,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // Community
   {
-    id: "n6",
+    id: NOTIFICATION_IDS.n6,
     type: "community",
     title: "Reply from @elena_k",
     description: '"Great insight on the attention economy thread! I think the key point is..."',
