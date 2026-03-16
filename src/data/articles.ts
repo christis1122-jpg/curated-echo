@@ -281,7 +281,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "3.7k", highlights: "1.5k",
   },
   {
-    id: "7",
+    id: ARTICLE_IDS["7"],
     type: "Op-Ed",
     domain: "Culture",
     title: "The Myth of Digital Minimalism",
