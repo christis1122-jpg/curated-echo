@@ -124,7 +124,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // Streak warning
   {
-    id: "n8",
+    id: NOTIFICATION_IDS.n8,
     type: "streak",
     title: "⚡ Streak at risk!",
     description: "Read one article before midnight to keep your 12-day streak alive.",
