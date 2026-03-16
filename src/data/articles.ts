@@ -215,7 +215,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
 
 export const MOCK_ARTICLES: Article[] = [
   {
-    id: "1",
+    id: ARTICLE_IDS["1"],
     type: "Essay",
     domain: "Psychology",
     title: "The Quiet Architecture of Self-Deception",
