@@ -64,7 +64,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: false,
     icon: "clock",
     actionLabel: "Start Reading",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
   },
   // Achievement
   {
