@@ -97,7 +97,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: true,
     icon: "trending-up",
     actionLabel: "Preview",
-    actionRoute: "/reader/3",
+    actionRoute: `/read/${ARTICLE_IDS["3"]}`,
   },
   // Community
   {
