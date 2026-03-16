@@ -22,9 +22,11 @@ export interface InsightThread {
   createdAt: string;
 }
 
+import { NOTE_IDS, THREAD_IDS, ARTICLE_IDS, ARCHIVED_READ_IDS } from "@/data/gyst-ids";
+
 export const MOCK_NOTES: LibraryNote[] = [
   {
-    id: "n1",
+    id: NOTE_IDS.n1,
     articleTitle: "The Quiet Architecture of Self-Deception",
     articleAuthor: "Elena Voss",
     articleDomain: "Psychology",
