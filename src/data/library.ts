@@ -133,13 +133,13 @@ export const MOCK_THREADS: InsightThread[] = [
     createdAt: "Yesterday",
   },
   {
-    id: "t3",
+    id: THREAD_IDS.t3,
     title: "Technology as Cognitive Architecture",
     summary: "Sarah Kim's work on attention engineering and your observations about workspace design suggest that our cognitive environment is as important as our cognitive habits. The tools we surround ourselves with shape our thinking capacity.",
-    noteIds: ["n5", "n6", "n3"],
+    noteIds: [NOTE_IDS.n5, NOTE_IDS.n6, NOTE_IDS.n3],
     connections: [
-      { from: "n5", to: "n3", label: "Cognitive depletion ↔ Creative capacity" },
-      { from: "n5", to: "n6", label: "Phone presence ↔ Attention allocation" },
+      { from: NOTE_IDS.n5, to: NOTE_IDS.n3, label: "Cognitive depletion ↔ Creative capacity" },
+      { from: NOTE_IDS.n5, to: NOTE_IDS.n6, label: "Phone presence ↔ Attention allocation" },
     ],
     createdAt: "2 days ago",
   },
