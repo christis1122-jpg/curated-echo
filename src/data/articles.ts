@@ -187,7 +187,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "The engineering of attention is the engineering of human experience",
     ],
   },
-  "5": {
+  [ARTICLE_IDS["5"]]: {
     content: ESSAY_CONTENT,
     keyIdeas: [
       "Difficult books resist us, and the resistance is the value",
