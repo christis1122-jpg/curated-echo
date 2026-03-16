@@ -144,7 +144,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: true,
     icon: "bookmark",
     actionLabel: "Continue",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
   },
   {
     id: "n10",
