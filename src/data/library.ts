@@ -218,8 +218,8 @@ export const MOCK_ARCHIVED_READS: ArchivedRead[] = [
     highlightsCount: 1,
   },
   {
-    id: "ar5",
-    articleId: "7",
+    id: ARCHIVED_READ_IDS.ar5,
+    articleId: ARTICLE_IDS["7"],
     title: "The Myth of Digital Minimalism",
     author: "Priya Sharma",
     domain: "Culture",
