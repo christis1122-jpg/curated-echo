@@ -86,7 +86,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: false,
     icon: "file-text",
     actionLabel: "Read Now",
-    actionRoute: "/reader/2",
+    actionRoute: `/read/${ARTICLE_IDS["2"]}`,
   },
   {
     id: "n5",
