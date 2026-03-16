@@ -259,7 +259,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "12.4k", highlights: "3.6k",
   },
   {
-    id: "5",
+    id: ARTICLE_IDS["5"],
     type: "Essay",
     domain: "Literature",
     title: "On the Pleasure of Difficult Books",
