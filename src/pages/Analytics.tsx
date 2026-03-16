@@ -9,6 +9,9 @@ import {
   KEY_STATS, HEATMAP_DATA, DOMAIN_DATA, TREND_DATA,
   ACHIEVEMENTS, ARCHETYPE_EVOLUTION, COMPARISON_INSIGHTS,
 } from "@/data/analytics";
+import { getAllUuids } from "@/data/gyst-ids";
+import { KnowledgePointCloud } from "@/components/ui/knowledge-point-cloud";
+import { TokenSavingsPanel } from "@/components/ui/token-savings-panel";
 import {
   ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis,
   LineChart, Line, XAxis, YAxis, Tooltip, AreaChart, Area, CartesianGrid,
