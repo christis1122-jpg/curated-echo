@@ -46,7 +46,7 @@ export const NOTIFICATION_TYPE_META: Record<NotificationType, { label: string; c
 export const MOCK_NOTIFICATIONS: Notification[] = [
   // Streak
   {
-    id: "n1",
+    id: NOTIFICATION_IDS.n1,
     type: "streak",
     title: "🔥 12-Day Streak!",
     description: "You're on fire! Keep it going — only 2 more days to beat your personal best.",
