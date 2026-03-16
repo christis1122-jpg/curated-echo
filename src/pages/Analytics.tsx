@@ -248,6 +248,20 @@ const Analytics = () => {
           ))}
         </motion.div>
 
+        {/* Knowledge Space */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42 }}>
+          <KnowledgePointCloud
+            uuids={getAllUuids()}
+            height={240}
+            projections={["xy", "xz", "yz"]}
+          />
+        </motion.div>
+
+        {/* Token Savings */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.44 }}>
+          <TokenSavingsPanel />
+        </motion.div>
+
         {/* Set Goals CTA */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}>
           <button
