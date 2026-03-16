@@ -112,7 +112,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     actionRoute: "/discussion",
   },
   {
-    id: "n7",
+    id: NOTIFICATION_IDS.n7,
     type: "community",
     title: "Mentioned in discussion",
     description: "@james_r mentioned you in 'Future of Deep Reading' — 12 new replies.",
