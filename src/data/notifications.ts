@@ -56,7 +56,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // Smart reading reminder
   {
-    id: "n2",
+    id: NOTIFICATION_IDS.n2,
     type: "reading_reminder",
     title: "Your evening window is open",
     description: "Based on your pattern, the next 45 minutes are your peak reading time.",
