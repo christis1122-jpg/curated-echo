@@ -204,8 +204,8 @@ export const MOCK_ARCHIVED_READS: ArchivedRead[] = [
     highlightsCount: 4,
   },
   {
-    id: "ar4",
-    articleId: "3",
+    id: ARCHIVED_READ_IDS.ar4,
+    articleId: ARTICLE_IDS["3"],
     title: "Why We Should Abandon the Trolley Problem",
     author: "Marcus Webb",
     domain: "Philosophy",
