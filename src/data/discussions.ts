@@ -1,3 +1,6 @@
+import { ARTICLE_IDS, DISCUSSION_IDS, REPLY_IDS } from "@/data/gyst-ids";
+import { generateDeterministic } from "@/lib/gyst-uuid";
+
 export type Archetype = "Polymath" | "Scholar" | "Philosopher" | "Curator" | "Contrarian" | "Synthesizer";
 
 export const ARCHETYPE_COLORS: Record<Archetype, string> = {
