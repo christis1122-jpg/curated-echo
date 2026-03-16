@@ -1,3 +1,6 @@
+import { ARTICLE_IDS, DISCUSSION_IDS, REPLY_IDS } from "@/data/gyst-ids";
+import { generateDeterministic } from "@/lib/gyst-uuid";
+
 export type Archetype = "Polymath" | "Scholar" | "Philosopher" | "Curator" | "Contrarian" | "Synthesizer";
 
 export const ARCHETYPE_COLORS: Record<Archetype, string> = {
@@ -56,7 +59,7 @@ const USERS: Record<string, DiscussionUser> = {
 };
 
 export const MOCK_DISCUSSIONS: Record<string, DiscussionThread[]> = {
-  "1": [
+  [ARTICLE_IDS["1"]]: [
     {
       id: "d1", tab: "debate", user: USERS.maya,
       content: "I think the essay undersells the **social dimension** of self-deception. We don't just deceive ourselves in isolation — our self-deceptions are co-constructed with the people around us. Families, organizations, and entire cultures maintain shared fictions.",
@@ -120,10 +123,12 @@ export const MOCK_DISCUSSIONS: Record<string, DiscussionThread[]> = {
 };
 
 // Generate discussions for other articles using article 1 as template
-["2", "3", "4", "5", "6", "7"].forEach((id) => {
-  MOCK_DISCUSSIONS[id] = MOCK_DISCUSSIONS["1"].map((t) => ({
+(["2", "3", "4", "5", "6", "7"] as const).forEach((num) => {
+  const articleId = ARTICLE_IDS[num];
+  const sourceId = ARTICLE_IDS["1"];
+  MOCK_DISCUSSIONS[articleId] = MOCK_DISCUSSIONS[sourceId].map((t) => ({
     ...t,
-    id: `${t.id}-${id}`,
-    replies: t.replies.map((r) => ({ ...r, id: `${r.id}-${id}` })),
+    id: generateDeterministic(`disc-${t.id}-${num}`, { domain: "discussion", fractalLevel: "fragment" }),
+    replies: t.replies.map((r) => ({ ...r, id: generateDeterministic(`reply-${r.id}-${num}`, { domain: "discussion", fractalLevel: "atom" }) })),
   }));
 });

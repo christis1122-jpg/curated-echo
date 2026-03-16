@@ -20,10 +20,9 @@ const Reader = () => {
   const navigate = useNavigate();
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Find article (handle duplicated IDs from infinite scroll)
-  const baseId = id?.split("-")[0] || "";
-  const article = MOCK_ARTICLES.find((a) => a.id === baseId);
-  const articleContent = ARTICLE_CONTENTS[baseId];
+  // Find article by matching GYST UUID or legacy ID
+  const article = MOCK_ARTICLES.find((a) => a.id === id);
+  const articleContent = id ? ARTICLE_CONTENTS[id] : undefined;
 
   const {
     bookmarked, toggleBookmark,

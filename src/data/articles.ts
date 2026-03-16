@@ -148,8 +148,10 @@ More radical approaches include "time well spent" design principles that optimiz
 
 The stakes are higher than most people realize. Attention is the fundamental resource of conscious experience. How we allocate it determines what we perceive, what we think, what we feel, and ultimately, who we become. The engineering of attention is, in a very real sense, the engineering of human experience itself.`;
 
+import { ARTICLE_IDS } from "@/data/gyst-ids";
+
 export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: string[] }> = {
-  "1": {
+  [ARTICLE_IDS["1"]]: {
     content: ESSAY_CONTENT,
     keyIdeas: [
       "Self-deception evolved as an adaptive mechanism, not a cognitive flaw",
@@ -158,7 +160,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Meta-awareness of our own deceptions may be the path to honest growth",
     ],
   },
-  "2": {
+  [ARTICLE_IDS["2"]]: {
     content: RESEARCH_CONTENT,
     keyIdeas: [
       "Creative flow involves rapid cycling between the default mode and executive networks",
@@ -167,7 +169,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Flow states exhibit a ~15-20 second neural cycle pattern",
     ],
   },
-  "3": {
+  [ARTICLE_IDS["3"]]: {
     content: OPED_CONTENT,
     keyIdeas: [
       "The trolley problem trains us to ignore context — the opposite of good moral reasoning",
@@ -176,7 +178,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Moral philosophy should begin with perception, not impossible hypotheticals",
     ],
   },
-  "4": {
+  [ARTICLE_IDS["4"]]: {
     content: ARTICLE_CONTENT,
     keyIdeas: [
       "Attention engineering exploits dopamine pathways evolved for survival",
@@ -185,7 +187,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "The engineering of attention is the engineering of human experience",
     ],
   },
-  "5": {
+  [ARTICLE_IDS["5"]]: {
     content: ESSAY_CONTENT,
     keyIdeas: [
       "Difficult books resist us, and the resistance is the value",
@@ -193,7 +195,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Comfort reading has its place but shouldn't be confused with growth",
     ],
   },
-  "6": {
+  [ARTICLE_IDS["6"]]: {
     content: RESEARCH_CONTENT,
     keyIdeas: [
       "Three Nordic cities are piloting degrowth-aligned economies",
@@ -201,7 +203,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
       "Community-scale experiments show scalable results",
     ],
   },
-  "7": {
+  [ARTICLE_IDS["7"]]: {
     content: OPED_CONTENT,
     keyIdeas: [
       "Digital minimalism addresses symptoms, not causes",
@@ -213,7 +215,7 @@ export const ARTICLE_CONTENTS: Record<string, { content: string; keyIdeas: strin
 
 export const MOCK_ARTICLES: Article[] = [
   {
-    id: "1",
+    id: ARTICLE_IDS["1"],
     type: "Essay",
     domain: "Psychology",
     title: "The Quiet Architecture of Self-Deception",
@@ -224,7 +226,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "2.3k", highlights: "847",
   },
   {
-    id: "2",
+    id: ARTICLE_IDS["2"],
     type: "Research",
     domain: "Neuroscience",
     title: "Mapping the Default Mode Network in Creative States",
@@ -235,7 +237,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "5.1k", highlights: "1.2k",
   },
   {
-    id: "3",
+    id: ARTICLE_IDS["3"],
     type: "Op-Ed",
     domain: "Philosophy",
     title: "Why We Should Abandon the Trolley Problem",
@@ -246,7 +248,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "8.9k", highlights: "2.1k",
   },
   {
-    id: "4",
+    id: ARTICLE_IDS["4"],
     type: "Article",
     domain: "Technology",
     title: "The Unintended Consequences of Attention Engineering",
@@ -257,7 +259,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "12.4k", highlights: "3.6k",
   },
   {
-    id: "5",
+    id: ARTICLE_IDS["5"],
     type: "Essay",
     domain: "Literature",
     title: "On the Pleasure of Difficult Books",
@@ -268,7 +270,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "1.8k", highlights: "623",
   },
   {
-    id: "6",
+    id: ARTICLE_IDS["6"],
     type: "Research",
     domain: "Economics",
     title: "Post-Growth Economies: Evidence from Nordic Experiments",
@@ -279,7 +281,7 @@ export const MOCK_ARTICLES: Article[] = [
     reads: "3.7k", highlights: "1.5k",
   },
   {
-    id: "7",
+    id: ARTICLE_IDS["7"],
     type: "Op-Ed",
     domain: "Culture",
     title: "The Myth of Digital Minimalism",

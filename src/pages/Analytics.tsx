@@ -9,6 +9,9 @@ import {
   KEY_STATS, HEATMAP_DATA, DOMAIN_DATA, TREND_DATA,
   ACHIEVEMENTS, ARCHETYPE_EVOLUTION, COMPARISON_INSIGHTS,
 } from "@/data/analytics";
+import { getAllUuids } from "@/data/gyst-ids";
+import { KnowledgePointCloud } from "@/components/ui/knowledge-point-cloud";
+import { TokenSavingsPanel } from "@/components/ui/token-savings-panel";
 import {
   ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis,
   LineChart, Line, XAxis, YAxis, Tooltip, AreaChart, Area, CartesianGrid,
@@ -243,6 +246,20 @@ const Analytics = () => {
               <ChevronRight size={16} className="text-muted-foreground shrink-0" />
             </div>
           ))}
+        </motion.div>
+
+        {/* Knowledge Space */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42 }}>
+          <KnowledgePointCloud
+            uuids={getAllUuids()}
+            height={240}
+            projections={["xy", "xz", "yz"]}
+          />
+        </motion.div>
+
+        {/* Token Savings */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.44 }}>
+          <TokenSavingsPanel />
         </motion.div>
 
         {/* Set Goals CTA */}

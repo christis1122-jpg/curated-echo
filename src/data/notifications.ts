@@ -1,3 +1,5 @@
+import { ARTICLE_IDS, NOTIFICATION_IDS } from "@/data/gyst-ids";
+
 export type NotificationType =
   | "reading_reminder"
   | "new_content"
@@ -44,7 +46,7 @@ export const NOTIFICATION_TYPE_META: Record<NotificationType, { label: string; c
 export const MOCK_NOTIFICATIONS: Notification[] = [
   // Streak
   {
-    id: "n1",
+    id: NOTIFICATION_IDS.n1,
     type: "streak",
     title: "🔥 12-Day Streak!",
     description: "You're on fire! Keep it going — only 2 more days to beat your personal best.",
@@ -54,7 +56,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // Smart reading reminder
   {
-    id: "n2",
+    id: NOTIFICATION_IDS.n2,
     type: "reading_reminder",
     title: "Your evening window is open",
     description: "Based on your pattern, the next 45 minutes are your peak reading time.",
@@ -62,11 +64,11 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: false,
     icon: "clock",
     actionLabel: "Start Reading",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
   },
   // Achievement
   {
-    id: "n3",
+    id: NOTIFICATION_IDS.n3,
     type: "achievement",
     title: "🏆 Achievement Unlocked: Polymath Explorer",
     description: "You've read across 6 different domains this month. Impressive breadth!",
@@ -76,7 +78,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // New content
   {
-    id: "n4",
+    id: NOTIFICATION_IDS.n4,
     type: "new_content",
     title: "New from Dr. Sarah Chen",
     description: '"The Neuroscience of Decision Fatigue" — matches your cognitive science interests.',
@@ -84,10 +86,10 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: false,
     icon: "file-text",
     actionLabel: "Read Now",
-    actionRoute: "/reader/2",
+    actionRoute: `/read/${ARTICLE_IDS["2"]}`,
   },
   {
-    id: "n5",
+    id: NOTIFICATION_IDS.n5,
     type: "new_content",
     title: "Trending in Philosophy",
     description: '"Beyond Rationality" by Marcus Webb is gaining traction among Synthesizers.',
@@ -95,11 +97,11 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: true,
     icon: "trending-up",
     actionLabel: "Preview",
-    actionRoute: "/reader/3",
+    actionRoute: `/read/${ARTICLE_IDS["3"]}`,
   },
   // Community
   {
-    id: "n6",
+    id: NOTIFICATION_IDS.n6,
     type: "community",
     title: "Reply from @elena_k",
     description: '"Great insight on the attention economy thread! I think the key point is..."',
@@ -110,7 +112,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     actionRoute: "/discussion",
   },
   {
-    id: "n7",
+    id: NOTIFICATION_IDS.n7,
     type: "community",
     title: "Mentioned in discussion",
     description: "@james_r mentioned you in 'Future of Deep Reading' — 12 new replies.",
@@ -122,7 +124,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   // Streak warning
   {
-    id: "n8",
+    id: NOTIFICATION_IDS.n8,
     type: "streak",
     title: "⚡ Streak at risk!",
     description: "Read one article before midnight to keep your 12-day streak alive.",
@@ -130,11 +132,11 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: true,
     icon: "alert-triangle",
     actionLabel: "Quick Read",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
   },
   // Reading reminder
   {
-    id: "n9",
+    id: NOTIFICATION_IDS.n9,
     type: "reading_reminder",
     title: "Continue where you left off",
     description: '"The Paradox of Choice" — you were 68% through. Pick it back up?',
@@ -142,10 +144,10 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
     read: true,
     icon: "bookmark",
     actionLabel: "Continue",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
   },
   {
-    id: "n10",
+    id: NOTIFICATION_IDS.n10,
     type: "achievement",
     title: "🎯 7-Day Streak earned!",
     description: "Consistent reading is the foundation of deep thinking. Badge added to your profile.",
@@ -162,7 +164,7 @@ export const SMART_PROMPTS: SmartPrompt[] = [
     subtext: '"Why We Sleep Badly" by Dr. A. Walker • 4 min read',
     icon: "zap",
     actionLabel: "Start Reading",
-    actionRoute: "/reader/1",
+    actionRoute: `/read/${ARTICLE_IDS["1"]}`,
     gradient: ["hsl(24 80% 52%)", "hsl(45 95% 55%)"],
   },
   {
@@ -180,7 +182,7 @@ export const SMART_PROMPTS: SmartPrompt[] = [
     subtext: "New essay matches your interests in neuroscience and decision-making.",
     icon: "sparkles",
     actionLabel: "Read Essay",
-    actionRoute: "/reader/2",
+    actionRoute: `/read/${ARTICLE_IDS["2"]}`,
     gradient: ["hsl(160 60% 40%)", "hsl(210 70% 50%)"],
   },
 ];

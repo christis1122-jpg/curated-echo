@@ -14,9 +14,8 @@ type SortMode = "top" | "newest" | "author";
 const Discussion = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const baseId = id?.split("-")[0] || "";
-  const article = MOCK_ARTICLES.find((a) => a.id === baseId);
-  const threads = MOCK_DISCUSSIONS[baseId] || [];
+  const article = MOCK_ARTICLES.find((a) => a.id === id);
+  const threads = (id && MOCK_DISCUSSIONS[id]) || [];
 
   const [activeTab, setActiveTab] = useState<DiscussionTab>("debate");
   const [sort, setSort] = useState<SortMode>("top");
